@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quotes APIs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container mt-1">
+        <section class="content">
+            <h1>Welcome to the Quotes APIs!</h1>
+            <p>The available resources are:</p>
+            <ul>
+                <li class="mb-3"><code>/random</code>: returns a random quote.<br><a class="btn btn-primary" href="/random">Try it!</a></li>
+                <li><code>/search?q=&lt;query&gt;</code>: searches for quotes that matech a certain string (with fuzzy matching).<br><a class="btn btn-primary" href="/search?q=friend">Try it!</a></li>
+            </ul>
+            <p>Other fun things we support:</p>
+            <ul>
+              <li class="mb-3"><code>/quote.html</code>: pretty and colorful view of your favorite quotes.<br><a class="btn btn-primary" href="/quote.html">Try it!</a>
+                <br><br> Runs this query:
+                <code>
+                  [
+                    { $match: { colors: { $ne: null } } },
+                    { $sample: { size: 1 } }
+                  ]
+                </code>
+              </li>
+            </ul>
+        </section>
+    </div>
+  </body>
+</html>
