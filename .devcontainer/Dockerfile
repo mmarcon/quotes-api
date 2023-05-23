@@ -35,7 +35,7 @@ RUN apt-get install -y gnupg \
 
 # Install modules that MongoDB for VS Code Playgrounds need to find in home directory
 WORKDIR /home/${USERNAME}
-RUN su ${USERNAME} -c "npm install node-fetch@2"
+RUN su ${USERNAME} -c "npm install node-fetch@2 @faker-js/faker"
 
 COPY .devcontainer/mongodb-utils.sh /home/${USERNAME}/.mongodb-utils.sh
 RUN su ${USERNAME} -c "echo \"source ~/.mongodb-utils.sh\" >> ~/.bash_aliases"
